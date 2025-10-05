@@ -26,6 +26,7 @@ app.use(express.json());
 // Routes
 const movieRoutes = require("./routes/movie.js");
 app.use("/api/movies", movieRoutes);
+app.use("api/auth", require("./routes/authRoute"));
 
 async function startServer() {
   try {
