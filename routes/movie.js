@@ -5,6 +5,8 @@ const {
   updateMovie,
   getAllMovies,
   getMovieById,
+  addUserToMovie,
+  getMoviePersonnel,
 } = require("../controller/movie.js");
 
 const router = express.Router();
@@ -22,6 +24,10 @@ router.delete("/delete/:id", deleteMovie);
 router.get("/", getAllMovies);
 
 // Fetch a single movie by ID
+
+router.get("/personnel/:id", getMoviePersonnel);
+
+router.post("/personnel/:id", addUserToMovie);
 router.get("/:id", getMovieById);
 
 module.exports = router;

@@ -22,7 +22,7 @@ const movieSchema = new mongoose.Schema(
     director: { type: String, required: true },
     genre: { type: String, required: true },
     daysLeft: { type: Number },
-    people: { type: String },
+    people: [{ type: String }],
     infiniteCanvasUrl: String,
     chatUrl: String,
     currentStage: {
@@ -82,5 +82,4 @@ const movieSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Movie = mongoose.model("Movie", movieSchema);
-module.exports = Movie;
+module.exports = mongoose.model("Movie", movieSchema);
